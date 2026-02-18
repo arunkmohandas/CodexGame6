@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simon Says</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="menu-screen" class="screen active" aria-labelledby="game-title">
+      <h1 id="game-title">Simon Says</h1>
+      <p class="subtitle">Remember the pattern. Beat all levels.</p>
+      <div class="menu-actions">
+        <button id="start-btn" class="primary-btn">Start Game</button>
+        <button id="menu-music-toggle" class="secondary-btn" aria-pressed="true">Music: ON</button>
+      </div>
+    </section>
+
+    <section id="level-screen" class="screen" aria-labelledby="level-title">
+      <h2 id="level-title">Select Difficulty</h2>
+      <p class="subtitle">Higher level = faster playback and longer sequences.</p>
+      <div id="level-buttons" class="level-grid" role="group" aria-label="Level selection"></div>
+      <button id="back-menu-from-level" class="secondary-btn">Back to Menu</button>
+    </section>
+
+    <section id="game-screen" class="screen" aria-live="polite">
+      <header class="hud">
+        <p>Level: <span id="current-level">1</span></p>
+        <p>Score: <span id="score">0</span></p>
+      </header>
+
+      <div class="board" aria-label="Simon game board">
+        <button class="pad red" data-color="red" aria-label="Red"></button>
+        <button class="pad blue" data-color="blue" aria-label="Blue"></button>
+        <button class="pad green" data-color="green" aria-label="Green"></button>
+        <button class="pad yellow" data-color="yellow" aria-label="Yellow"></button>
+      </div>
+
+      <div class="game-actions">
+        <button id="replay-sequence" class="secondary-btn">Replay Sequence</button>
+        <button id="game-music-toggle" class="secondary-btn" aria-pressed="true">Music: ON</button>
+      </div>
+      <p id="status-text" class="status-text">Watch the sequence...</p>
+    </section>
+
+    <section id="gameover-screen" class="screen" aria-labelledby="gameover-title">
+      <h2 id="gameover-title">Game Over</h2>
+      <p>You reached score: <strong id="final-score">0</strong></p>
+      <div class="menu-actions">
+        <button id="restart-btn" class="primary-btn">Restart</button>
+        <button id="back-menu-from-gameover" class="secondary-btn">Back to Menu</button>
+      </div>
+    </section>
+
+    <section id="victory-screen" class="screen" aria-labelledby="victory-title">
+      <h2 id="victory-title">Victory!</h2>
+      <p>You completed every level. Final score: <strong id="victory-score">0</strong></p>
+      <div class="menu-actions">
+        <button id="play-again-btn" class="primary-btn">Play Again</button>
+        <button id="back-menu-from-victory" class="secondary-btn">Back to Menu</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
